@@ -11,7 +11,7 @@ jobs:
           directory: ./
 
       - name: Deploy to Netlify
-        uses: netlify/actions/cli@v4
+        uses: netlify/actions/cli@v3
         id: netlify_deploy
         with:
           args: deploy --dir=public --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN --json
@@ -24,5 +24,3 @@ jobs:
           DEPLOY_URL=$(jq -r '.deploy_url' < "$GITHUB_WORKSPACE/.netlify/deploy-info.json")
           echo "Netlify Deploy URL: $DEPLOY_URL"
           echo "::set-output name=deploy_url::$DEPLOY_URL"
-
-   
