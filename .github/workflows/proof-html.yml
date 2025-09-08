@@ -9,3 +9,20 @@ jobs:
       - uses: anishathalye/proof-html@v1.1.0
         with:
           directory: ./
+
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@v4
+        id: netlify_deploy
+        with:
+          args: deploy --dir=public --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN --json
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Get Netlify Deploy URL
+        run: |
+          DEPLOY_URL=$(jq -r '.deploy_url' < "$GITHUB_WORKSPACE/.netlify/deploy-info.json")
+          echo "Netlify Deploy URL: $DEPLOY_URL"
+          echo "::set-output name=deploy_url::$DEPLOY_URL"
+
+   
