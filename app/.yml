@@ -1,2 +1,0 @@
-- name: Netlify CLI
-  uses: South-Paw/action-netlify-cli@2.0.0
