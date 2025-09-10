@@ -31,6 +31,7 @@ function SoulPadCanvas() {
         if (e.target !== toolbar) return;
         isDragging = true;
         toolbar.style.cursor = "grabbing";
+        debugger;
         const rect = toolbar.getBoundingClientRect();
         offsetX = e.clientX - rect.left;
         offsetY = e.clientY - rect.top;
