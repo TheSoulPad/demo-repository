@@ -1,0 +1,22 @@
+.tlui-layout__bottom {
+  position: relative;
+}
+
+.tl-container {
+  position: relative;
+  z-index: 0;
+}
+
+.tlui-toolbar-container.tlui-toolbar__tools {
+  z-index: 1000;
+  max-width: 180px !important;
+  flex-wrap: wrap !important;
+  padding: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.tlui-toolbar__tools__list {
+  flex-wrap: wrap !important;
+}

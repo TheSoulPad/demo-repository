@@ -1,7 +1,5 @@
-import { Tldraw } from "tldraw";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import "tldraw/tldraw.css";
+import SoulPadCanvas from "./Components/SoulPadCanvas";
 
 function App() {
   return (
@@ -11,18 +9,7 @@ function App() {
           Demo of SoulPad Canvas
         </Typography>
       </header>
-      <Box
-        m={10}
-        p={2}
-        border={1}
-        borderColor="grey.500"
-        sx={{
-          position: "fixed",
-          inset: "0",
-        }}
-      >
-        <Tldraw />
-      </Box>
+      <SoulPadCanvas />
     </div>
   );
 }
